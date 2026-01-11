@@ -214,7 +214,7 @@ sudo apt-get install -y $(cat make-fnnas/script/ubuntu2404-make-fnnas-depends)
 | -e   | debs_install  | 设置是否安装官方提供的不同平台的 debs 格式内核包。选项：`amlogic` / `rockchip` / `allwinner` / `none`。默认值：`none` |
 | -t   | dtbs_install  | 设置是否补充安装官方没有的 dtbs 文件。可选项 `true` / `false`。默认值：`false` |
 
-- `sudo ./rekernel` : 使用默认配置。把当前 fnnas 镜像里的内核进行打包。
+- `sudo ./rekernel` : 使用默认配置。不安装 dtbs 包也不补充 dtbs文件，把当前 fnnas 镜像里的内核进行打包。
 - `sudo ./rekernel -e amlogic` : 先把 amlogic 的 debs 内核包安装到当前系统里，然后在进行内核打包。
 - `sudo ./rekernel -t true` : 先把官方没有的 dtbs 文件补充安装到当前系统里，然后在进行内核打包。
 - `sudo ./rekernel -e allwinner -t false` : 先把 allwinner 的 debs 内核包安装到当前系统里，不补充安装 dtbs 文件，然后进行内核打包。

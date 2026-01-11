@@ -216,7 +216,7 @@ The related parameters correspond to the `local packaging command`, please refer
 | -e | debs_install | Sets whether to install official `.deb` kernel packages for different platforms. Options: `amlogic` / `rockchip` / `allwinner` / `none`. Default value: `none` |
 | -t | dtbs_install | Sets whether to install additional `dtbs` files missing from the official release. Options: `true` / `false`. Default value: `false` |
 
-- `sudo ./rekernel` : Uses default configuration. Packages the kernel currently in the FnNAS image.
+- `sudo ./rekernel` : Uses default configuration. Does not install dtbs packages nor supplement dtbs files, packages the kernel in the current fnnas image.
 - `sudo ./rekernel -e amlogic` : First installs the `amlogic` deb kernel packages into the current system, then proceeds with kernel packaging.
 - `sudo ./rekernel -t true` : First installs additional `dtbs` files (missing from official sources) into the current system, then proceeds with kernel packaging.
 - `sudo ./rekernel -e allwinner -t false` : First installs the `allwinner` deb kernel packages into the current system, does not install additional `dtbs` files, and then proceeds with kernel packaging.
@@ -241,7 +241,7 @@ The relevant parameters correspond to the `local packaging command`. Please refe
 | Parameter        | Default       | Description                                  |
 |------------------|---------------|----------------------------------------------|
 | fnnas_path       | None          | Sets the path to the official original Arm64 FnNAS image file. |
-| debs_repo        | ophub/fnnas   | Sets the `<owner>/<repo>` of the debs kernel repository on github.com. Refer to `-d` for functionality. |
+| debs_repo        | ophub/fnnas   | Sets the `<owner>/<repo>` of the debs kernel repository on github.com. Refer to `-r` for functionality. |
 | debs_version     | 6.12.y        | Sets the kernel version. Refer to `-k` for functionality. |
 | debs_install     | none          | Sets whether to install official kernel packages in `.deb` format. Refer to `-e` for functionality. |
 | dtbs_install     | false         | Sets whether to install additional `dtbs` files missing from the official release. Refer to `-t` for functionality. |
